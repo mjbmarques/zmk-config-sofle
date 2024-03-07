@@ -19,15 +19,16 @@
     conditional_layers { compatible = "zmk,conditional-layers"; };
 
     behaviors {
-        new_behavior: new_behavior {
+        space_and_layer: space_and_layer {
             compatible = "zmk,behavior-hold-tap";
-            label = "NEW_BEHAVIOR";
+            label = "SPACE_AND_LAYER";
             bindings = <&mo>, <&kp>;
 
             #binding-cells = <2>;
-            hold-trigger-key-positions = <55>;
-            quick-tap-ms = <120>;
             tapping-term-ms = <200>;
+            quick-tap-ms = <120>;
+            flavor = "tap-unless-interrupted";
+            hold-trigger-key-positions = <55>;
         };
     };
 
